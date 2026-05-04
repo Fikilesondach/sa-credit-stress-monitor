@@ -1,0 +1,98 @@
+{
+  "model_version": "1.0.0",
+  "feature_names": [
+    "repo_rate_roll3std",
+    "misery_index",
+    "npl_ratio",
+    "gdp_growth_roll2m",
+    "current_account_pct_gdp_roll3m",
+    "real_rate_roll2std",
+    "real_rate_roll2m",
+    "vix_avg_roll3std",
+    "vix_avg_roll3m",
+    "vix_avg_roll2std",
+    "vix_avg_roll2m",
+    "zar_usd_roll3std",
+    "zar_usd_roll3m",
+    "zar_usd_roll2std",
+    "zar_usd_roll2m",
+    "current_account_pct_gdp_roll3std",
+    "current_account_pct_gdp_roll2std",
+    "real_rate_roll3std",
+    "current_account_pct_gdp_roll2m",
+    "govt_debt_pct_gdp_roll3std"
+  ],
+  "feature_importances": {
+    "repo_rate_roll3std": 0.37851566076278687,
+    "misery_index": 0.26577433943748474,
+    "npl_ratio": 0.17799213528633118,
+    "gdp_growth_roll2m": 0.17771781980991364,
+    "current_account_pct_gdp_roll3m": 0.0,
+    "real_rate_roll2std": 0.0,
+    "real_rate_roll2m": 0.0,
+    "vix_avg_roll3std": 0.0,
+    "vix_avg_roll3m": 0.0,
+    "vix_avg_roll2std": 0.0,
+    "vix_avg_roll2m": 0.0,
+    "zar_usd_roll3std": 0.0,
+    "zar_usd_roll3m": 0.0,
+    "zar_usd_roll2std": 0.0,
+    "zar_usd_roll2m": 0.0,
+    "current_account_pct_gdp_roll3std": 0.0,
+    "current_account_pct_gdp_roll2std": 0.0,
+    "real_rate_roll3std": 0.0,
+    "current_account_pct_gdp_roll2m": 0.0,
+    "govt_debt_pct_gdp_roll3std": 0.0
+  },
+  "xgb_params": {
+    "objective": "binary:logistic",
+    "eval_metric": "auc",
+    "n_estimators": 200,
+    "max_depth": 2,
+    "learning_rate": 0.05,
+    "subsample": 0.8,
+    "colsample_bytree": 0.6,
+    "min_child_weight": 3,
+    "reg_alpha": 0.5,
+    "reg_lambda": 2.0,
+    "gamma": 0.1,
+    "random_state": 42,
+    "verbosity": 0
+  },
+  "cv_summary": {
+    "auc": {
+      "mean": 0.5,
+      "std": 0.0
+    },
+    "gini": {
+      "mean": 0.0,
+      "std": 0.0
+    },
+    "ks": {
+      "mean": 0.7778,
+      "std": 0.1571
+    },
+    "brier": {
+      "mean": 0.2479,
+      "std": 0.0016
+    },
+    "precision": {
+      "mean": 0.75,
+      "std": 0.0
+    },
+    "recall": {
+      "mean": 1.0,
+      "std": 0.0
+    },
+    "f1": {
+      "mean": 0.8571,
+      "std": 0.0
+    }
+  },
+  "target": "credit_stress",
+  "classes": {
+    "0": "stable",
+    "1": "stress"
+  },
+  "label_definition": "stress=1 when NPL>=4% OR GDP_growth<0 OR (unemployment>30% AND NPL>3.5%)"
+}

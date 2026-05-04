@@ -1,0 +1,53 @@
+# ── SA Credit Stress Monitor — .gitignore ────────────────────────────────────
+
+# Secrets — NEVER commit these
+.streamlit/secrets.toml
+gcp-sa-key.json
+.env
+*.env
+
+# Model artefacts (large binaries — committed only by the retrain CI job)
+# Uncomment the lines below if you prefer to keep artefacts out of git
+# and always train fresh on deploy. Leave commented to commit artefacts
+# so Streamlit Cloud can run the dashboard without a training step.
+# data/processed/xgb_model.joblib
+# data/processed/model_artefact.json
+# data/processed/shap_summary.json
+
+# Raw data
+data/raw/*.parquet
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+.env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Pytest + coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb

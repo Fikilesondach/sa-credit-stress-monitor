@@ -1,0 +1,23 @@
+# .streamlit/config.toml
+# Applied automatically by Streamlit Cloud and local `streamlit run`.
+
+[theme]
+# SA-flag-inspired palette: green anchor, gold accents, dark background
+primaryColor        = "#007A4D"   # SA green
+backgroundColor     = "#0E1117"   # near-black (matches Plotly dark charts)
+secondaryBackgroundColor = "#1A1F2C"  # sidebar + card surfaces
+textColor           = "#E8EAF0"   # soft white — easier on eyes than pure white
+font                = "sans serif"
+
+[server]
+# Streamlit Cloud ignores port/address but this keeps local dev consistent.
+port                = 8501
+enableCORS          = false       # Cloud Run proxy handles CORS
+enableXsrfProtection = true
+
+[browser]
+gatherUsageStats    = false       # no telemetry sent to Streamlit
+
+[runner]
+# Suppress the NumPy 2.0 deprecation warnings that leak through plotly
+magicEnabled        = true
