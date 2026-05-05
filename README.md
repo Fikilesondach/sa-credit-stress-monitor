@@ -238,7 +238,6 @@ The script pauses at step 5 to print the base64 service account key for GitHub S
 
 ## Author
 
-**Fikile Sondach**  
-Senior Business Intelligence Analyst — Santam Client Solutions  
+**Fikile Sondach**   
 BSc Actuarial Science · IFoA CT1, CT2, CT3, CT7, CT8  
 [github.com/Fikilesondach](https://github.com/Fikilesondach)
